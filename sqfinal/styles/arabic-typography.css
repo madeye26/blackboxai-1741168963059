@@ -1,0 +1,163 @@
+:root {
+    --font-cairo: 'Cairo', sans-serif;
+    --font-tajawal: 'Tajawal', sans-serif;
+    --font-amiri: 'Amiri', serif;
+    --line-height-base: 1.6;
+    --letter-spacing-base: 0.01em;
+}
+
+/* Enhanced Arabic Typography */
+body {
+    line-height: var(--line-height-base);
+    letter-spacing: var(--letter-spacing-base);
+}
+
+/* Font Family Options */
+.font-cairo {
+    font-family: var(--font-cairo);
+}
+
+.font-tajawal {
+    font-family: var(--font-tajawal);
+}
+
+.font-amiri {
+    font-family: var(--font-amiri);
+}
+
+/* Headings Enhancement */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cairo);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+/* Paragraph Enhancement */
+p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+/* Form Labels Enhancement */
+.form-label {
+    font-family: var(--font-cairo);
+    font-weight: 600;
+}
+
+/* Button Text Enhancement */
+.btn {
+    font-family: var(--font-cairo);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/* Table Headers Enhancement */
+.table th {
+    font-family: var(--font-cairo);
+    font-weight: 600;
+}
+
+/* Card Titles Enhancement */
+.card-title, .section-title, .dashboard-chart-title {
+    font-family: var(--font-cairo);
+    font-weight: 700;
+}
+
+/* Sidebar Menu Enhancement */
+.sidebar-heading {
+    font-family: var(--font-cairo);
+    font-weight: 700;
+}
+
+.list-group-item {
+    font-family: var(--font-tajawal);
+    font-weight: 500;
+}
+
+/* Font Size Utility Classes */
+.text-xs {
+    font-size: 0.75rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-md {
+    font-size: 1rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+}
+
+/* Font Weight Utility Classes */
+.font-normal {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+/* RTL Specific Typography Improvements */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .form-control,
+[dir="rtl"] .form-select {
+    text-align: right;
+}
+
+/* Improved Readability in Dark Mode */
+body.dark-mode {
+    --line-height-base: 1.7;
+}
+
+body.dark-mode p {
+    line-height: 1.9;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    h4 {
+        font-size: 1.125rem;
+    }
+    
+    p {
+        font-size: 0.95rem;
+    }
+}
