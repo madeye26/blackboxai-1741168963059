@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام الرواتب والموارد البشرية</title>
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/chart-styles.css">
+    <link rel="stylesheet" href="styles/dashboard-styles.css">
+    <link rel="stylesheet" href="styles/dark-theme.css">
+    <link rel="stylesheet" href="styles/arabic-typography.css">
+    <link rel="stylesheet" href="styles/enhanced-contrast.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts - Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Additional Arabic Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Performance Optimizations -->
+    <script src="js/performance-optimizations.js"></script>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold">
+                <i class="fas fa-users-cog me-2"></i>نظام الرواتب
+            </div>
+            <div class="list-group list-group-flush my-3">
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active" id="dashboard-tab">
+                    <i class="fas fa-tachometer-alt me-2"></i>لوحة التحكم
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text" id="employees-tab">
+                    <i class="fas fa-user-plus me-2"></i>إدخال بيانات الموظفين
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="hr-tab">
+                    <i class="fas fa-users me-2"></i>الموظفين
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="payroll-tab">
+                    <i class="fas fa-money-bill-wave me-2"></i>عرض كشف الرواتب
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="advances-tab">
+                    <i class="fas fa-hand-holding-usd me-2"></i>إدارة السلف
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="time-tracking-tab">
+                    <i class="fas fa-clock me-2"></i>تتبع وقت الموظفين
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="leave-management-tab">
+                    <i class="fas fa-calendar-alt me-2"></i>إدارة الإجازات
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="reports-tab">
+                    <i class="fas fa-chart-line me-2"></i>نظام التقارير
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="task-management-tab">
+                    <i class="fas fa-tasks me-2"></i>نظام المهام والتذكيرات
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="advanced-analytics-tab">
+                    <i class="fas fa-chart-pie me-2"></i>التحليلات المتقدمة
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="print-tab">
+                    <i class="fas fa-print me-2"></i>طباعة كشوف الرواتب
+                </a>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-align-right primary-text fs-4 me-3" id="menu-toggle"></i>
+                    <h2 class="fs-2 m-0">لوحة التحكم</h2>
+                </div>
+                <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- Dark/Light Mode Toggle Button -->
+                    <div class="nav-item me-3">
+                        <button class="theme-toggle btn btn-outline-primary btn-sm" title="تبديل المظهر الداكن/الفاتح">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <div class="nav-item me-3">
+                        <div class="connection-status">
+                            <i class="fas fa-database me-1"></i>
+                            <span id="connection-status-text">جاري الاتصال...</span>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-file-export me-1"></i>تصدير
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="exportDropdown">
+                            <li><a class="dropdown-item" href="#" id="export-pdf"><i class="fas fa-file-pdf me-2"></i>PDF</a></li>
+                            <li><a class="dropdown-item" href="#" id="export-excel"><i class="fas fa-file-excel me-2"></i>Excel</a></li>
+                            <li><a class="dropdown-item" href="#" id="export-csv"><i class="fas fa-file-csv me-2"></i>CSV</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid px-4">
+                <div id="main-content">
+                    <!-- Content will be loaded dynamically here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SheetJS (XLSX) -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <!-- html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- SortableJS for drag and drop -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <!-- Custom JS -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/payroll.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/time-tracking.js"></script>
+    <script src="js/leave-management.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/theme-color-selector.js"></script>
+    <script src="js/dashboard-customizer.js"></script>
+    <script src="js/dashboard-drag-drop.js"></script>
+    <script src="js/task-management.js"></script>
+    <script src="js/advanced-analytics.js"></script>
+    <script src="js/page-transitions.js"></script>
+</body>
+</html>
