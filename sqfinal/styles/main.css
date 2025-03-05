@@ -1,0 +1,364 @@
+:root {
+    --main-bg-color: #eee;
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #0dcaf0;
+    --sidebar-width: 250px;
+    --card-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    --transition-speed: 0.25s;
+}
+
+body {
+    background: var(--main-bg-color);
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* Layout */
+#wrapper {
+    min-height: 100vh;
+}
+
+#sidebar-wrapper {
+    width: var(--sidebar-width);
+    min-height: 100vh;
+    margin-right: -var(--sidebar-width);
+    transition: margin var(--transition-speed) ease-out;
+    box-shadow: var(--card-shadow);
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: var(--sidebar-width);
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+.wrapper.toggled #sidebar-wrapper {
+    margin-right: 0;
+}
+
+/* Navigation */
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
+    transition: all var(--transition-speed) ease;
+}
+
+.list-group-item:hover {
+    background-color: rgba(13, 110, 253, 0.1);
+    color: var(--primary-color);
+}
+
+.list-group-item.active {
+    background-color: transparent;
+    color: var(--primary-color);
+    font-weight: bold;
+    border: none;
+}
+
+/* Forms */
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.form-control.is-invalid {
+    border-color: var(--danger-color);
+}
+
+/* Section Cards */
+.section-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Salary Components */
+.salary-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.salary-component {
+    background: white;
+    border-radius: 6px;
+    padding: 12px;
+    height: 100%;
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-speed);
+}
+
+.salary-component:hover {
+    transform: translateY(-2px);
+}
+
+.salary-component .title {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.salary-component .value {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.salary-component .value.text-danger {
+    color: var(--danger-color) !important;
+}
+
+.salary-component .value.text-success {
+    color: var(--success-color) !important;
+}
+
+/* Tables */
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    margin-top: 20px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    font-weight: 600;
+    background-color: rgba(0,0,0,0.02);
+}
+
+/* RTL Specific */
+.form-control {
+    text-align: right;
+}
+
+.table th,
+.table td {
+    text-align: right;
+}
+
+/* Buttons */
+.btn {
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0b5ed7;
+    transform: translateY(-1px);
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* Loading States */
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.2em;
+}
+/* Connection Status Indicator Styles */
+.connection-status {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.connection-status.connected {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.connection-status.disconnected {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.connection-status i {
+    font-size: 14px;
+}
+
+.connection-status span {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 8px;
+    margin-bottom: 20px;
+    animation: fadeIn var(--transition-speed) ease-in;
+}
+
+.alert-dismissible {
+    padding-left: 3rem;
+}
+
+/* Form Validation */
+.invalid-feedback {
+    display: block;
+    color: var(--danger-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Currency Inputs */
+.currency-input {
+    position: relative;
+}
+
+.currency-input::after {
+    content: "ج.م";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    pointer-events: none;
+}
+
+.currency-input input {
+    padding-left: 45px;
+}
+
+/* Print Styles */
+@media print {
+    #sidebar-wrapper,
+    #menu-toggle,
+    .no-print {
+        display: none !important;
+    }
+
+    #page-content-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .print-only {
+        display: block !important;
+    }
+
+    .section-card {
+        break-inside: avoid;
+        border: 1px solid #dee2e6;
+        margin: 10px 0;
+        page-break-inside: avoid;
+    }
+
+    .salary-component {
+        box-shadow: none;
+        border: 1px solid #dee2e6;
+    }
+
+    .section-title {
+        color: #000;
+        border-bottom-color: #dee2e6;
+    }
+
+    .salary-component .value {
+        color: #000 !important;
+    }
+
+    .salary-component .value.text-danger {
+        color: #dc3545 !important;
+    }
+
+    .salary-component .value.text-success {
+        color: #198754 !important;
+    }
+
+    .btn {
+        display: none !important;
+    }
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-right: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .wrapper.toggled #sidebar-wrapper {
+        margin-right: -var(--sidebar-width);
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn var(--transition-speed) ease-in;
+}
