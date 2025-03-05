@@ -1,0 +1,133 @@
+/* Page Transitions and Animations */
+
+/* Base transition styles */
+.page-transition {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Page enter animation */
+.page-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Page exit animation */
+.page-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* Button hover effects */
+.btn {
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Card hover effects */
+.stats-card,
+.quick-actions-card,
+.recent-activities-card,
+.dashboard-chart-card,
+.salary-component {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats-card:hover,
+.quick-actions-card:hover,
+.recent-activities-card:hover,
+.dashboard-chart-card:hover,
+.salary-component:hover {
+    transform: translateY(-5px);
+}
+
+/* List item hover effects */
+.list-group-item {
+    transition: background-color 0.2s ease, color 0.2s ease, padding-right 0.2s ease;
+}
+
+.list-group-item:hover {
+    padding-right: 35px;
+}
+
+/* Form control focus animation */
+.form-control {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Loading spinner animation */
+.loading-spinner {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+body.dark-mode .loading-spinner {
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--dark-primary);
+}
+
+/* Fade in animation for elements */
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Pulse animation for notifications */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Shake animation for errors */
+.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
