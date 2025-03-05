@@ -1,0 +1,136 @@
+:root {
+    /* Enhanced contrast variables for light mode */
+    --enhanced-text-primary: #000000;
+    --enhanced-text-secondary: #333333;
+    --enhanced-link-color: #0056b3;
+    --enhanced-border-color: #666666;
+    --enhanced-input-border: #555555;
+    --enhanced-focus-ring: rgba(0, 86, 179, 0.6);
+    --enhanced-hover-bg: rgba(0, 0, 0, 0.08);
+    
+    /* Enhanced contrast variables for dark mode */
+    --enhanced-dark-text-primary: #ffffff;
+    --enhanced-dark-text-secondary: #cccccc;
+    --enhanced-dark-link-color: #66b0ff;
+    --enhanced-dark-border-color: #888888;
+    --enhanced-dark-input-border: #aaaaaa;
+    --enhanced-dark-focus-ring: rgba(102, 176, 255, 0.6);
+    --enhanced-dark-hover-bg: rgba(255, 255, 255, 0.15);
+}
+
+/* Enhanced text contrast for light mode */
+body {
+    color: var(--enhanced-text-primary);
+}
+
+.text-muted, .text-secondary {
+    color: var(--enhanced-text-secondary) !important;
+}
+
+a {
+    color: var(--enhanced-link-color);
+}
+
+/* Form elements with enhanced contrast */
+.form-control {
+    border-color: var(--enhanced-input-border);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem var(--enhanced-focus-ring);
+}
+
+/* Table with enhanced contrast */
+.table {
+    color: var(--enhanced-text-primary);
+    border-color: var(--enhanced-border-color);
+}
+
+.table thead th {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--enhanced-text-primary);
+    font-weight: 700;
+}
+
+/* Enhanced contrast for dark mode */
+body.dark-mode {
+    color: var(--enhanced-dark-text-primary);
+}
+
+body.dark-mode .text-muted,
+body.dark-mode .text-secondary {
+    color: var(--enhanced-dark-text-secondary) !important;
+}
+
+body.dark-mode a {
+    color: var(--enhanced-dark-link-color);
+}
+
+body.dark-mode .form-control {
+    border-color: var(--enhanced-dark-input-border);
+}
+
+body.dark-mode .form-control:focus {
+    border-color: var(--dark-primary);
+    box-shadow: 0 0 0 0.25rem var(--enhanced-dark-focus-ring);
+}
+
+body.dark-mode .table {
+    color: var(--enhanced-dark-text-primary);
+    border-color: var(--enhanced-dark-border-color);
+}
+
+body.dark-mode .table thead th {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--enhanced-dark-text-primary);
+}
+
+/* Enhanced button contrast */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
+
+.btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+body.dark-mode .btn-primary {
+    background-color: var(--dark-primary);
+    border-color: var(--dark-primary);
+}
+
+body.dark-mode .btn-outline-primary {
+    border-color: var(--dark-primary);
+    color: var(--dark-primary);
+}
+
+body.dark-mode .btn-outline-primary:hover {
+    background-color: var(--dark-primary);
+    color: var(--enhanced-dark-text-primary);
+}
+
+/* Enhanced focus indicators for accessibility */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+body.dark-mode a:focus, 
+body.dark-mode button:focus, 
+body.dark-mode input:focus, 
+body.dark-mode select:focus, 
+body.dark-mode textarea:focus {
+    outline: 2px solid var(--dark-primary);
+    outline-offset: 2px;
+}
