@@ -1,0 +1,411 @@
+:root {
+    --card-hover-transform: translateY(-5px);
+    --card-hover-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    --stat-icon-size: 50px;
+    --stat-icon-opacity: 0.2;
+}
+
+/* Enhanced Dashboard Container */
+.dashboard-container {
+    padding: 10px 0;
+}
+
+/* Stats Cards with Enhanced Design */
+.stats-card {
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+
+.stats-card:hover {
+    transform: var(--card-hover-transform);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.stats-icon {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    opacity: var(--stat-icon-opacity);
+    font-size: var(--stat-icon-size);
+}
+
+.stats-info {
+    position: relative;
+    z-index: 1;
+    text-align: right;
+}
+
+.stats-info h5 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.stats-info h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Quick Actions Card */
+.quick-actions-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.quick-actions-card:hover {
+    box-shadow: var(--card-hover-shadow);
+}
+
+.quick-actions-card h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+    border-bottom: 2px solid rgba(13, 110, 253, 0.1);
+    padding-bottom: 10px;
+}
+
+.quick-actions-card .btn {
+    margin-bottom: 10px;
+    padding: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.quick-actions-card .btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Recent Activities Card */
+.recent-activities-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.recent-activities-card:hover {
+    box-shadow: var(--card-hover-shadow);
+}
+
+.recent-activities-card h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+    border-bottom: 2px solid rgba(13, 110, 253, 0.1);
+    padding-bottom: 10px;
+}
+
+.activity-item {
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background-color: #f8f9fa;
+    transition: all 0.2s ease;
+}
+
+.activity-item:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+.activity-item .activity-icon {
+    margin-left: 10px;
+    color: var(--primary-color);
+}
+
+.activity-item .activity-time {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+}
+
+/* Dashboard Charts Section */
+.dashboard-charts {
+    margin-top: 30px;
+}
+
+.dashboard-chart-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.dashboard-chart-card:hover {
+    transform: var(--card-hover-transform);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.dashboard-chart-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Search Box */
+.dashboard-search {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.dashboard-search input {
+    border-radius: 50px;
+    padding: 10px 20px;
+    padding-right: 40px;
+    border: 1px solid #ddd;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.dashboard-search input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: var(--primary-color);
+}
+
+.dashboard-search i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+}
+
+/* Notification Badge */
+.notification-badge {
+    position: relative;
+    display: inline-block;
+}
+
+.notification-badge .badge {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    font-size: 0.7rem;
+    padding: 0.25em 0.5em;
+    border-radius: 50%;
+    background-color: var(--danger-color);
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .stats-card {
+        margin-bottom: 15px;
+    }
+    
+    .quick-actions-card,
+    .recent-activities-card {
+        margin-bottom: 15px;
+    }
+    
+    .stats-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .stats-icon {
+        font-size: 40px;
+    }
+}
+/* Search Results Styling */
+.search-results-container {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 100;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 5px;
+}
+
+.search-results-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.result-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(13, 110, 253, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    color: var(--primary-color);
+}
+
+.result-info {
+    flex: 1;
+}
+
+.result-name {
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.result-details {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+}
+
+.no-results {
+    padding: 15px;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+/* Customizable Dashboard */
+.dashboard-customize-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 99;
+    transition: all 0.3s ease;
+}
+
+.dashboard-customize-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Employee Details Modal */
+.employee-details .row {
+    margin-bottom: 15px;
+}
+
+.employee-details label {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.employee-details div:not(.row):not(.col-md-6) {
+    font-size: 1.1rem;
+}
+
+/* Dashboard Sections List for Customization */
+.dashboard-sections-list {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.dashboard-section-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    cursor: move;
+    transition: background-color 0.2s ease;
+}
+
+.dashboard-section-item:hover {
+    background-color: #e9ecef;
+}
+
+.dashboard-section-item .handle {
+    cursor: grab;
+    color: var(--secondary-color);
+}
+
+/* Compact View */
+.dashboard-container.compact-view .stats-card,
+.dashboard-container.compact-view .quick-actions-card,
+.dashboard-container.compact-view .recent-activities-card,
+.dashboard-container.compact-view .dashboard-chart-card {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.dashboard-container.compact-view .stats-info h3 {
+    font-size: 1.5rem;
+}
+
+.dashboard-container.compact-view .stats-icon {
+    font-size: 40px;
+}
+
+/* No Animations */
+.dashboard-container.no-animations *,
+.dashboard-container.no-animations *:hover {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 576px) {
+    .stats-card {
+        margin-bottom: 10px;
+    }
+    
+    .stats-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .stats-icon {
+        font-size: 35px;
+    }
+    
+    .dashboard-chart-card {
+        padding: 15px 10px;
+    }
+    
+    .dashboard-chart-title {
+        font-size: 1rem;
+    }
+    
+    .dashboard-customize-btn,
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8rem;
+    }
+}
